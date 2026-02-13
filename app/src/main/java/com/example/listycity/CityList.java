@@ -34,5 +34,38 @@ public class CityList {
         return list;
     }
 
+    /**
+     * Checks whether a city is in the list
+     *
+     * @param city city to check
+     * @return true if the city is in the list
+     */
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    /**
+     * Deletes a city from list.
+     * If the city is not therr, throws an exception.
+     *
+     * @param city city to delete
+     * @throws IllegalArgumentException if the city is not there
+     */
+    public void delete(City city) {
+        if (!cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+        cities.remove(city);
+    }
+
+    /**
+     * Counts how many cities are in the list.
+     *
+     * @return number of cities in the list
+     */
+    public int countCities() {
+        return cities.size();
+    }
+
 
 }
